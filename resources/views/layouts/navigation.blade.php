@@ -22,8 +22,11 @@
                         <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                             {{ __('Dashboard') }}
                         </x-nav-link>
-                        <x-nav-link :href="route('produk')" :active="request()->routeIs('produk')">
-                            {{ __('Produk') }}
+                        <x-nav-link :href="route('produk.index')" :active="request()->routeIs('produk.index')">
+                            {{ __('Manajemen Produk') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('bahan.index')" :active="request()->routeIs('bahan.index')">
+                            {{ __('Manajemen Stok Bahan Baku') }}
                         </x-nav-link>
                     @endif
 
@@ -31,6 +34,15 @@
                     @if ($role === 'kasir')
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('produk.index')" :active="request()->routeIs('produk.index')">
+                        {{ __('Lihat Produk') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('bahan.index')" :active="request()->routeIs('bahan.index')">
+                        {{ __('Lihat Stok Bahan Baku') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('pelanggan.index')" :active="request()->routeIs('pelanggan.index')">
+                        {{ __('Manajemen Data Pelanggan') }}
                     </x-nav-link>
                     @endif
                 </div>
