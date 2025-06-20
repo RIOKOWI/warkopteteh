@@ -17,4 +17,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
+
+    Route::get('/produk', function () {
+        return view('produk.index'); 
+    })->name('produk');
+});
+
 require __DIR__.'/auth.php';

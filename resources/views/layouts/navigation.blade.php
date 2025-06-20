@@ -10,11 +10,29 @@
                     </a>
                 </div>
 
+               @php
+                    $role = Auth::user()->role->value ?? null;
+                @endphp
+
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+
+                    {{-- menu admin --}}
+                    @if ($role === 'admin')
+                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                            {{ __('Dashboard') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('produk')" :active="request()->routeIs('produk')">
+                            {{ __('Produk') }}
+                        </x-nav-link>
+                    @endif
+
+                    {{-- menu kasir --}}
+                    @if ($role === 'kasir')
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    @endif
                 </div>
             </div>
 
