@@ -21,4 +21,9 @@ class Produk extends Model
         'deskripsi',
         'foto',
     ];
+
+    public function transactions()
+    {
+        return $this->hasMany(Penjualan::class);
+    }
 }

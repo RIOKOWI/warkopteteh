@@ -5,7 +5,8 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BahanBakuController;
 use App\Http\Controllers\PelangganController;
-
+use App\Http\Controllers\PenjualanController;
+use App\Models\DetailPenjualan;
 
 Route::get('/', function () {
     return view('welcome');
@@ -46,6 +47,8 @@ Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
 
 Route::middleware(['auth', 'verified', 'role:kasir'])->group(function () {
     Route::resource('pelanggan', PelangganController::class);
+
+    Route::resource('penjualan', PenjualanController::class);
 });
 
 

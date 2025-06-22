@@ -44,6 +44,9 @@
                     <x-nav-link :href="route('pelanggan.index')" :active="request()->routeIs('pelanggan.index')">
                         {{ __('Manajemen Data Pelanggan') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('penjualan.index')" :active="request()->routeIs('penjualan.index')">
+                        {{ __('Pencatatan Penjualan') }}
+                    </x-nav-link>
                     @endif
                 </div>
             </div>
