@@ -14,8 +14,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <p>Login sebagai: {{ Auth::check() ? Auth::user()->name : 'Guest' }}</p>
-    <p>Role: {{ Auth::check() ? Auth::user()->role : 'Tidak ada' }}</p>
+        
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
@@ -34,5 +33,8 @@
                 {{ $slot }}
             </main>
         </div>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+
     </body>
 </html>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BahanBakuController;
+use App\Http\Controllers\LaporanPenjualanController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\PenjualanController;
 use App\Models\DetailPenjualan;
@@ -42,7 +43,9 @@ Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
     Route::get('/bahan/{bahan}/edit', [BahanBakuController::class, 'edit'])->name('bahan.edit');
     Route::put('/bahan/{bahan}', [BahanBakuController::class, 'update'])->name('bahan.update');
     Route::delete('/bahan/{bahan}', [BahanBakuController::class, 'destroy'])->name('bahan.destroy');
-
+    
+    Route::get('/laporan', [LaporanPenjualanController::class, 'index'])->name('laporan.index');
+    
 });
 
 Route::middleware(['auth', 'verified', 'role:kasir'])->group(function () {
