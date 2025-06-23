@@ -5,9 +5,7 @@
             <!-- Logo di Atas -->
             <div class="flex justify-center">
                 <a href="/">
-                    <img src="{{ asset('images/WhatsApp Image 2025-06-22 at 20.23.34_8695b5f0.jpg') }}"
-                         alt="Logo Warkop"
-                         class="h-32 w-auto rounded-xl object-contain">
+                    <img src="{{ asset('images/WhatsApp Image 2025-06-22 at 20.23.34_8695b5f0.jpg') }}" alt="Logo Warkop" class="h-32 w-auto rounded-xl object-contain">
                 </a>
             </div>
 
